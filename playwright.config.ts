@@ -8,10 +8,10 @@ export default defineConfig({
   retries: process.env.CI ? 2 : 0,
   workers: process.env.CI ? 1 : undefined,
 
-  reporter: [
-    ['list'],
-    ['allure-playwright'],
-  ],
+reporter: [
+  ['list'],
+  ['allure-playwright', { resultsDir: 'allure-results' }]
+],
 
   use: {
     trace: 'retain-on-failure',
